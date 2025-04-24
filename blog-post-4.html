@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đời Sống Du Lịch | NguyenMinhDat Blog</title>
+    <title>NguyenMinhDat Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -105,6 +105,22 @@
             color: #6b7280;
         }
         
+        .blog-content code {
+            background-color: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        
+        .blog-content pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
         .blog-content img {
             max-width: 100%;
             height: auto;
@@ -121,19 +137,14 @@
             font-weight: 500;
         }
         
-        .tag-travel {
-            background-color: #e0f2fe;
-            color: #0369a1;
+        .tag-warning {
+            background-color: #fef2f2;
+            color: #dc2626;
         }
         
-        .tag-lifestyle {
-            background-color: #f0fdf4;
-            color: #15803d;
-        }
-        
-        .tag-adventure {
-            background-color: #fef3c7;
-            color: #b45309;
+        .tag-scam {
+            background-color: #fefce8;
+            color: #ca8a04;
         }
         
         .author-social a {
@@ -159,39 +170,6 @@
         
         .related-post:hover {
             transform: translateY(-5px);
-        }
-        
-        /* Custom styles for travel blog */
-        .travel-header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-        
-        .travel-quote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: #1e40af;
-            border-left: 4px solid #3b82f6;
-            padding-left: 1.5rem;
-        }
-        
-        .location-tag {
-            display: inline-flex;
-            align-items: center;
-            background-color: #eff6ff;
-            color: #1d4ed8;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .location-tag i {
-            margin-right: 0.25rem;
         }
     </style>
 </head>
@@ -223,32 +201,31 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
                 <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
-                <a href="blog-post-2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Blog</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Blog</a>
                 <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Blog Header -->
-    <header class="pt-24 pb-16 travel-header">
+    <header class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="inline-flex items-center space-x-2 mb-4">
-                    <span class="tag tag-travel">Du lịch</span>
-                    <span class="tag tag-lifestyle">Lối sống</span>
+                    <span class="tag tag-warning">Warning</span>
+                    <span class="tag tag-scam">Scam</span>
                 </div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">Sống Một Đời Du Lịch: Hành Trình Khám Phá Bản Thân</h1>
-                <div class="flex items-center justify-center space-x-4 text-gray-200">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Phốt Nguyễn Quang Huy, quê Bắc Ninh, Đại học GTVT</h1>
+                <div class="flex items-center justify-center space-x-4 text-gray-600">
                     <div class="flex items-center">
-                        <img src="img/project.jpg" 
-                             alt="Tác giả" 
+                        <img src="img/project.jpg" alt="Author"
                              class="w-8 h-8 rounded-full mr-2">
                         <span>NguyenMinhDat</span>
                     </div>
                     <span>•</span>
-                    <span>24 tháng 4, 2025</span>
+                    <span>March 10, 2023</span>
                     <span>•</span>
-                    <span>8 phút đọc</span>
+                    <span>7 min read</span>
                 </div>
             </div>
         </div>
@@ -257,104 +234,49 @@
     <!-- Blog Content -->
     <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div class="blog-content bg-white rounded-xl shadow-sm p-8 md:p-12">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1512&q=80" 
-                 alt="Hành trình du lịch" 
+            <img src="img/q.jpg" 
+                 alt="Warning" 
                  class="w-full rounded-lg">
             
-            <p class="text-lg font-medium text-gray-700 mb-6">Hơn 5 năm qua, tôi đã chọn một lối sống không ngừng di chuyển. Từ những ngọn núi cao nhất đến những bãi biển đẹp nhất, mỗi chuyến đi đều mang lại cho tôi những bài học quý giá về cuộc sống và con người.</p>
+            <h2 class="text-lg font-medium text-gray-700 mb-6">🚨 Cảnh Báo: Nguyễn Quang Huy – Sinh Viên GTVT Với Hàng Loạt Drama 🚨</h2>
+            <p>Mọi người ơi, đây là lời cảnh báo khẩn cấp về <strong>Nguyễn Quang Huy</strong>, quê Bắc Ninh, hiện đang học tại Đại học Giao thông Vận tải (GTVT)! 😱 Tưởng đâu là một sinh viên tử tế, ai ngờ Huy lại có một "profile" lừa đảo dài như phim truyền hình! 📽️ Hãy cùng tìm hiểu chi tiết để tránh trở thành nạn nhân của những chiêu trò này.</p>
             
-            <h2>Tại Sao Tôi Chọn Đời Sống Du Lịch?</h2>
-            <p>Sau khi tốt nghiệp đại học, tôi nhận ra mình không phù hợp với lối sống văn phòng 8 tiếng mỗi ngày. Tôi muốn tự do, muốn khám phá và trải nghiệm thế giới theo cách của riêng mình.</p>
-            
-            <p>Ban đầu chỉ là những chuyến đi ngắn ngày vào cuối tuần, dần dần trở thành những hành trình xuyên quốc gia kéo dài hàng tháng trời. Và rồi tôi nhận ra: <strong>du lịch không chỉ là đi chơi, mà là một cách sống.</strong></p>
-            
-            <div class="my-8">
-                <div class="travel-quote bg-blue-50 p-6 rounded-lg">
-                    "Không phải tất cả những kẻ lang thang đều lạc lối. Một số đang tìm kiếm chính mình trên những nẻo đường xa lạ."
-                </div>
-            </div>
-            
-            <h2>Những Điểm Đến Đã Thay Đổi Cuộc Đời Tôi</h2>
-            
-            <div class="mb-6">
-                <div class="flex flex-wrap mb-4">
-                    <span class="location-tag"><i class="fas fa-mountain"></i> Sapa, Việt Nam</span>
-                    <span class="location-tag"><i class="fas fa-umbrella-beach"></i> Đảo Phú Quốc</span>
-                    <span class="location-tag"><i class="fas fa-city"></i> Tokyo, Nhật Bản</span>
-                    <span class="location-tag"><i class="fas fa-tree"></i> Rừng Amazon</span>
-                </div>
-                
-                <p>Mỗi điểm đến đều để lại trong tôi những kỷ niệm khó quên:</p>
-                <ul>
-                    <li><strong>Sapa:</strong> Nơi tôi học cách sống chậm lại, ngắm nhìn thiên nhiên và trân trọng những điều giản dị.</li>
-                    <li><strong>Phú Quốc:</strong> Dạy tôi về sự bình yên của biển cả và cách tận hưởng từng khoảnh khắc.</li>
-                    <li><strong>Tokyo:</strong> Cho tôi thấy sự hòa hợp giữa truyền thống và hiện đại, giữa con người và công nghệ.</li>
-                    <li><strong>Rừng Amazon:</strong> Nhắc nhở tôi về sự nhỏ bé của con người trước thiên nhiên hùng vĩ.</li>
-                </ul>
-            </div>
-            
-            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                 alt="Cảnh đẹp thiên nhiên" 
-                 class="w-full rounded-lg">
-            
-            <h2>Làm Thế Nào Để Sống Một Đời Du Lịch?</h2>
-            <p>Nhiều người nghĩ rằng cần phải giàu có mới có thể đi du lịch nhiều. Nhưng thực tế, bạn hoàn toàn có thể sống một đời du lịch với ngân sách hạn chế nếu biết cách:</p>
-            
-            <h3>1. Lập Kế Hoạch Tài Chính Thông Minh</h3>
-            <p>Tiết kiệm 30% thu nhập hàng tháng cho quỹ du lịch. Tôi thường chọn những điểm đến có chi phí sinh hoạt thấp như Đông Nam Á hay Trung Mỹ để kéo dài thời gian du lịch.</p>
-            
-            <h3>2. Tìm Nguồn Thu Nhập Từ Xa</h3>
-            <p>Với sự phát triển của internet, bạn hoàn toàn có thể làm việc từ bất cứ đâu. Một số công việc phổ biến:</p>
+            <h2>Các Vụ Việc Nổi Bật Liên Quan Đến Nguyễn Quang Huy</h2>
+            <p>Nghe bạn bè kể lại, Huy nổi tiếng với những hành vi thiếu trung thực, từ mượn tiền không trả đến làm mất tài sản của người khác. Dưới đây là một số vụ việc điển hình:</p>
             <ul>
-                <li>Viết blog du lịch (như tôi đang làm)</li>
-                <li>Thiết kế đồ họa tự do</li>
-                <li>Dạy tiếng Anh online</li>
-                <li>Lập trình viên remote</li>
+                <li><strong>Mượn tiền "bốc hơi"</strong>: Huy thường xuyên mượn tiền từ vài trăm nghìn đến vài triệu, hứa trả đúng hạn nhưng cuối cùng không trả. Một bạn thân đã cho Huy mượn 5 triệu đồng để đóng học phí, với lời thề thốt trả trong 1 tuần. Kết quả? Một tháng sau, Huy chặn số bạn đó! 😡</li>
+                <li><strong>Làm mất laptop</strong>: Huy mượn laptop của một bạn cùng lớp để "làm bài tập nhóm", nhưng làm mất máy mà không đền bù. Thậm chí, Huy còn đổ lỗi cho một bạn khác, gây ra mâu thuẫn không đáng có. 🤦‍♂️</li>
+                <li><strong>Drama xe máy</strong>: Huy hứa chở một nhóm bạn đi chơi bằng xe máy mượn của anh họ. Giữa đường, xe hỏng, và Huy bắt cả nhóm góp tiền sửa xe. Sau đó, Huy lặn mất tăm, để lại nhóm bạn tự xử lý! 😵</li>
             </ul>
             
-            <h3>3. Sống Tối Giản</h3>
-            <p>Tôi chỉ mang theo một ba lô 15kg cho mọi chuyến đi. Sống tối giản giúp tôi tiết kiệm chi phí và linh hoạt hơn trong di chuyển.</p>
-            
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                 alt="Ba lô du lịch" 
-                 class="w-full rounded-lg">
-            
-            <h2>Những Bài Học Cuộc Sống</h2>
-            <p>Du lịch không chỉ mang lại cho tôi những bức ảnh đẹp, mà còn là những bài học quý giá:</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                <div class="bg-blue-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-blue-800 mb-2">1. Sự Tự Tin</h3>
-                    <p>Khi phải tự xoay sở ở một đất nước xa lạ, bạn sẽ học được cách tin vào bản thân và khả năng thích nghi.</p>
-                </div>
-                <div class="bg-green-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-green-800 mb-2">2. Lòng Tốt</h3>
-                    <p>Tôi đã gặp vô số người tốt sẵn sàng giúp đỡ mà không đòi hỏi điều gì. Điều này giúp tôi tin vào lòng tốt của con người.</p>
-                </div>
-                <div class="bg-yellow-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-yellow-800 mb-2">3. Sự Kiên Nhẫn</h3>
-                    <p>Những chuyến tàu trễ, những chuyến bay bị hoãn dạy tôi cách bình tĩnh đối mặt với mọi tình huống.</p>
-                </div>
-                <div class="bg-purple-50 p-6 rounded-lg">
-                    <h3 class="font-bold text-purple-800 mb-2">4. Sự Linh Hoạt</h3>
-                    <p>Kế hoạch luôn thay đổi, và tôi học được cách thích nghi nhanh chóng với mọi hoàn cảnh.</p>
-                </div>
-            </div>
-            
-            <h2>Lời Kết</h2>
-            <p>Đời sống du lịch không phải là một kỳ nghỉ dài ngày, mà là một cách nhìn nhận cuộc sống. Nó dạy tôi cách trân trọng hiện tại, mở lòng với những trải nghiệm mới và không ngừng học hỏi từ thế giới xung quanh.</p>
-            
-            <blockquote class="text-center text-xl font-medium text-gray-700 my-8">
-                "Bạn không cần phải giàu có để đi du lịch, bạn chỉ cần đủ can đảm để bước ra khỏi vùng an toàn của mình."
+            <h2>Hành Vi Khoe Khoang Trên Mạng Xã Hội</h2>
+            <p>Không chỉ dừng lại ở các vụ lừa đảo, Huy còn thích khoe khoang trên mạng xã hội. Những bức ảnh với quần áo xịn, điện thoại đời mới, hay những status về "dự án lớn" đều là giả tạo:</p>
+            <ul>
+                <li><strong>Đồ mượn chưa trả</strong>: Nhiều món đồ Huy khoe trên mạng thực chất là đồ mượn hoặc chưa trả tiền. 😏</li>
+                <li><strong>"Diễn sâu" ở quán cà phê</strong>: Một số bạn kể đã thấy Huy ngồi ở quán cà phê, giả vờ gọi điện khoe đang làm việc với các công ty lớn. Thực tế, Huy chỉ làm thêm lặt vặt để kiếm sống. 🙄</li>
+            </ul>
+            <blockquote>
+                “Huy có vẻ ngoài hiền lành, dễ tạo thiện cảm, nhưng mọi người tuyệt đối đừng để bị lừa bởi vẻ bề ngoài đó!” – Một bạn cùng lớp chia sẻ.
             </blockquote>
             
-            <p>Nếu bạn đang ấp ủ giấc mơ du lịch dài ngày, hãy bắt đầu ngay hôm nay. Đừng để tuổi tác hay hoàn cảnh ngăn cản bạn khám phá thế giới tuyệt vời này.</p>
+            <h2>Lời Khuyên Cho Mọi Người</h2>
+            <p>Nếu bạn đang học tại GTVT hoặc có quen biết Nguyễn Quang Huy, hãy thật cẩn thận! Dưới đây là một số lưu ý để bảo vệ bản thân:</p>
+            <ol>
+                <li><strong>Không cho mượn tiền hoặc tài sản</strong>: Dù Huy có hứa hẹn thế nào, hãy từ chối khéo léo để tránh rủi ro.</li>
+                <li><strong>Xác minh thông tin</strong>: Nếu Huy khoe về dự án hay thành tích, hãy kiểm tra kỹ trước khi tin tưởng.</li>
+                <li><strong>Chia sẻ câu chuyện của bạn</strong>: Nếu bạn từng là nạn nhân của Huy, hãy kể lại để cảnh báo người khác. Cộng đồng càng biết, càng ít người bị lừa! 👇</li>
+            </ol>
+            
+            <h2>Kết Luận</h2>
+            <p>Nguyễn Quang Huy có thể khiến bạn tin tưởng ban đầu, nhưng những hành vi thiếu trung thực của cậu ta đã khiến nhiều người thất vọng. Hãy chia sẻ bài viết này để mọi người, đặc biệt là sinh viên GTVT, biết mà đề phòng. <strong>#PhốtNguyenQuangHuy #GTVT #CanhBaoLuaDao</strong></p>
+            
+            <h3>Mọi người có câu chuyện nào liên quan đến Nguyễn Quang Huy? Hãy chia sẻ để cùng nhau cảnh báo cộng đồng!</h3>
             
             <div class="border-t border-gray-200 mt-12 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                     <div class="flex items-center mb-4 md:mb-0">
                         <img src="img/project.jpg" 
-                             alt="Tác giả" 
+                             alt="Author" 
                              class="w-12 h-12 rounded-full mr-4">
                         <div>
                             <h4 class="font-semibold">NguyenMinhDat</h4>
@@ -458,7 +380,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <a href="index.html" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
-                    <p class="text-gray-400 mt-2">Chia sẻ đam mê du lịch và khám phá thế giới.</p>
+                    <p class="text-gray-400 mt-2">Sharing thoughts and experiences through writing.</p>
                 </div>
                 <div class="flex space-x-6">
                     <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
