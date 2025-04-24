@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sống Đẹp Mỗi Ngày | My Personal Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Blog specific styles */
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: #1f2937;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .blog-content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+        
+        .blog-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #6b7280;
+        }
+        
+        .blog-content code {
+            background-color: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        
+        .blog-content pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .tag-lifestyle {
+            background-color: #fefce8;
+            color: #ca8a04;
+        }
+        
+        .tag-motivation {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+        
+        .author-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            transition: all 0.3s ease;
+        }
+        
+        .author-social a:hover {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .related-post {
+            transition: transform 0.3s ease;
+        }
+        
+        .related-post:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html#home" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link text-gray-900 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#about" class="nav-link text-gray-900 hover:text-indigo-600 transition">About</a>
+                    <a href="blog-post-3.html" class="nav-link active text-gray-900 hover:text-indigo-600 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-gray-900 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <span class="tag tag-lifestyle">Lifestyle</span>
+                    <span class="tag tag-motivation">Motivation</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Sống Đẹp Mỗi Ngày: Những Thói Quen Nhỏ Tạo Nên Cuộc Sống Ý Nghĩa</h1>
+                <div class="flex items-center justify-center space-x-4 text-gray-600">
+                    <div class="flex items-center">
+                        <img src="img/project.jpg" 
+                             alt="Author" 
+                             class="w-8 h-8 rounded-full mr-2">
+                        <span>NguyenMinhDat</span>
+                    </div>
+                    <span>•</span>
+                    <span>April 24, 2025</span>
+                    <span>•</span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="blog-content bg-white rounded-xl shadow-sm p-8 md:p-12">
+            <img src="https://plus.unsplash.com/premium_photo-1673002094195-f18084be89ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 alt="Living Beautifully" 
+                 class="w-full rounded-lg">
+            
+            <p class="text-lg font-medium text-gray-700 mb-6">Cuộc sống là một hành trình, và mỗi ngày là một cơ hội để làm cho hành trình đó trở nên ý nghĩa hơn. Sống đẹp không chỉ là vẻ bề ngoài, mà là cách bạn nuôi dưỡng tâm hồn, xây dựng thói quen tích cực, và lan tỏa năng lượng tốt đến những người xung quanh. Trong bài viết này, chúng ta sẽ khám phá những thói quen nhỏ nhưng mạnh mẽ để sống đẹp mỗi ngày.</p>
+            
+            <h2>Vì Sao Sống Đẹp Quan Trọng?</h2>
+            <p>Sống đẹp giúp bạn tìm thấy niềm vui trong những điều giản dị, giảm căng thẳng, và tạo ra một cuộc sống cân bằng. Khi bạn sống với lòng biết ơn và sự tử tế, bạn không chỉ làm giàu tâm hồn mình mà còn truyền cảm hứng cho người khác.</p>
+            
+            <p>Một cuộc sống ý nghĩa không cần những thay đổi lớn lao. Đôi khi, chỉ một vài thói quen nhỏ, thực hiện đều đặn, có thể thay đổi hoàn toàn cách bạn nhìn nhận thế giới.</p>
+            
+            <h2>5 Thói Quen Nhỏ Để Sống Đẹp</h2>
+            <p>Dưới đây là 5 thói quen đơn giản nhưng hiệu quả để bạn bắt đầu hành trình sống đẹp:</p>
+            
+            <h3>1. Bắt Đầu Ngày Mới Với Lòng Biết Ơn</h3>
+            <p>Mỗi buổi sáng, dành vài phút để viết ra 3 điều bạn cảm thấy biết ơn – có thể là một tách cà phê thơm ngon, một người bạn tốt, hoặc đơn giản là ánh nắng ban mai. Lòng biết ơn giúp bạn tập trung vào những điều tích cực và khởi đầu ngày mới với tâm trạng vui vẻ.</p>
+            
+            <h3>2. Dành Thời Gian Cho Bản Thân</h3>
+            <p>Hãy dành ít nhất 15-30 phút mỗi ngày để làm điều bạn yêu thích, như đọc sách, thiền, hoặc đi dạo. Chăm sóc bản thân không phải là ích kỷ – đó là cách bạn nạp năng lượng để tiếp tục hành trình.</p>
+            
+            <h3>3. Giúp Đỡ Người Khác Mà Không Mong Đợi Hồi Đáp</h3>
+            <p>Một hành động tử tế nhỏ, như giúp một người lạ, nhường ghế trên xe buýt, hay gửi một tin nhắn động viên, có thể tạo ra hiệu ứng lan tỏa. Sự tử tế không chỉ làm đẹp tâm hồn bạn mà còn khiến thế giới trở nên ấm áp hơn.</p>
+            
+            <h3>4. Tận Hưởng Thiên Nhiên</h3>
+            <p>Hãy dành thời gian để kết nối với thiên nhiên – đi dạo trong công viên, chăm sóc cây cối, hoặc chỉ đơn giản là ngắm hoàng hôn. Thiên nhiên có khả năng chữa lành và nhắc nhở chúng ta về vẻ đẹp của cuộc sống.</p>
+            
+            <h3>5. Học Cách Buông Bỏ Tiêu Cực</h3>
+            <p>Thay vì giữ lấy những cảm xúc tiêu cực, hãy học cách tha thứ và buông bỏ. Viết nhật ký, trò chuyện với một người bạn thân, hoặc thực hành thiền có thể giúp bạn giải phóng những suy nghĩ không lành mạnh.</p>
+            
+            <blockquote>
+                "Hạnh phúc không phải là điều bạn tìm thấy, mà là điều bạn tạo ra từ những khoảnh khắc nhỏ bé trong cuộc sống."
+            </blockquote>
+            
+            <h2>Lời Kết</h2>
+            <p>Sống đẹp mỗi ngày không đòi hỏi bạn phải thay đổi cả thế giới. Chỉ cần những thói quen nhỏ, thực hiện đều đặn, bạn sẽ thấy cuộc sống trở nên ý nghĩa và trọn vẹn hơn. Hãy bắt đầu từ hôm nay – một nụ cười, một lời cảm ơn, hay một hành động tử tế có thể là bước đầu tiên để làm đẹp cuộc sống của bạn và những người xung quanh.</p>
+            
+            <p>Bạn đã sẵn sàng để sống đẹp chưa? Hãy chia sẻ thói quen yêu thích của bạn trong phần bình luận bên dưới!</p>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="img/project.jpg" 
+                             alt="Author" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">NguyenMinhDat</h4>
+                            <p class="text-gray-600 text-sm">Blogger Part-Time</p>
+                        </div>
+                    </div>
+                    <div class="author-social flex space-x-2">
+                        <a href="https://www.facebook.com/ddatde.rtdonw" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/your-twitter-username" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/datdon_wt/" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-minh-%C4%91%E1%BA%A1t-09a024287/" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-700 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/nguyenminhdat6401" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Posts -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-bold mb-8">Other Articles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Post 1 -->
+                <a href="#" class="related-post bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1663054473022-fdb28d2bae66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Blog Post" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="mr-3">April 24, 2025</span>
+                            <span>•</span>
+                            <span class="ml-3">8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Áp Lực Tuổi 20 – Cuộc Đua Vô Hình Và Hành Trình Tìm Lại Chính Mình</h3>
+                        <p class="text-gray-600 mb-4">“Tuổi 20 – chưa đủ trưởng thành để hiểu hết mọi thứ, nhưng cũng chẳng còn ngây thơ để mặc kệ mọi thứ trôi đi.”</p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Related Post 2 -->
+                <a href="#" class="related-post bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1512&q=80" 
+                             alt="Blog Post" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="mr-3">April 10, 2023</span>
+                            <span>•</span>
+                            <span class="ml-3">6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Sống Một Đời Du Lịch: Hành Trình Khám Phá Bản Thân</h3>
+                        <p class="text-gray-600 mb-4">Hơn 5 năm qua, tôi đã chọn một lối sống không ngừng di chuyển. Từ những ngọn núi cao nhất đến những bãi biển đẹp nhất, mỗi chuyến đi đều mang lại cho tôi những bài học quý giá về cuộc sống và con người.</p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Related Post 3 -->
+                <a href="#" class="related-post bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1673002094195-f18084be89ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Blog Post" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="mr-3">April 24, 2025</span>
+                            <span>•</span>
+                            <span class="ml-3">7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Sống Đẹp Mỗi Ngày</h3>
+                        <p class="text-gray-600 mb-4">Khám phá những thói quen nhỏ giúp bạn sống tích cực và ý nghĩa hơn mỗi ngày.</p>
+                        <div class="flex items-center text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html#home" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                    <p class="text-gray-400 mt-2">Sharing thoughts and experiences through writing.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="blog.html" class="text-gray-400 hover:text-white transition">BlogMOR</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 NguyenMinhDat Blog. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition mr-4">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Change active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
