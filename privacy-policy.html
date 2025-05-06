@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách Bảo mật - NguyenMinhDat</title>
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Content specific styles */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: #1f2937;
+        }
+        
+        .content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+        
+        .content ul, .content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+        
+        .content a {
+            color: #3b82f6;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .content a:hover {
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#about" class="nav-link text-gray-900 hover:text-indigo-600 transition">About</a>
+                    <a href="index.html#blog" class="nav-link text-gray-900 hover:text-indigo-600 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-gray-900 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
+                <a href="index.html#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="content bg-white rounded-xl shadow-sm p-8 md:p-12">
+            <h1>Chính sách Bảo mật</h1>
+            <p class="text-gray-600 italic">Cập nhật lần cuối: 25/04/2025</p>
+
+            <p>Chào mừng bạn đến với trang web <strong>NguyenMinhDat</strong> (sau đây gọi là "Trang web"). Chúng tôi cam kết bảo vệ quyền riêng tư và dữ liệu cá nhân của bạn theo các quy định của pháp luật Việt Nam, bao gồm <strong>Nghị định 13/2023/NĐ-CP về Bảo vệ Dữ liệu Cá nhân</strong>, <strong>Luật An ninh mạng 2018</strong>, và các quy định pháp luật liên quan. Chính sách Bảo mật này giải thích cách chúng tôi thu thập, sử dụng, lưu trữ, chia sẻ, và bảo vệ thông tin của bạn khi bạn truy cập hoặc sử dụng Trang web.</p>
+
+            <p>Bằng việc sử dụng Trang web, bạn đồng ý với các điều khoản được nêu trong Chính sách Bảo mật này. Nếu bạn không đồng ý, vui lòng không tiếp tục sử dụng Trang web.</p>
+
+            <h2>1. Thông tin chúng tôi thu thập</h2>
+            <p>Chúng tôi có thể thu thập các loại thông tin sau khi bạn tương tác với Trang web:</p>
+
+            <h3>1.1. Thông tin cá nhân</h3>
+            <ul>
+                <li><strong>Thông tin bạn cung cấp trực tiếp</strong>: Khi bạn để lại bình luận, liên hệ qua biểu mẫu, hoặc đăng ký nhận bản tin, chúng tôi có thể thu thập:
+                    <ul>
+                        <li>Họ và tên</li>
+                        <li>Địa chỉ email</li>
+                        <li>Số điện thoại (nếu được cung cấp)</li>
+                        <li>Nội dung tin nhắn hoặc bình luận</li>
+                    </ul>
+                </li>
+                <li><strong>Thông tin tự động thu thập</strong>: Khi bạn truy cập Trang web, chúng tôi có thể thu thập:
+                    <ul>
+                        <li>Địa chỉ IP</li>
+                        <li>Loại thiết bị, trình duyệt, và hệ điều hành</li>
+                        <li>Dữ liệu truy cập (URL trang được truy cập, thời gian truy cập)</li>
+                        <li>Thông tin về hành vi sử dụng (các trang bạn xem, liên kết bạn nhấp)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>1.2. Thông tin không nhận dạng cá nhân</h3>
+            <p>Dữ liệu tổng hợp hoặc ẩn danh, như số lượng truy cập vào Trang web hoặc bài viết được xem nhiều nhất, không liên kết trực tiếp với danh tính của bạn.</p>
+
+            <h2>2. Mục đích thu thập và sử dụng thông tin</h2>
+            <p>Chúng tôi sử dụng thông tin của bạn cho các mục đích sau:</p>
+            <ul>
+                <li><strong>Cung cấp và cải thiện dịch vụ</strong>:
+                    <ul>
+                        <li>Hiển thị nội dung phù hợp với sở thích của bạn.</li>
+                        <li>Trả lời các câu hỏi, bình luận, hoặc yêu cầu của bạn.</li>
+                        <li>Gửi bản tin hoặc thông báo (nếu bạn đăng ký).</li>
+                    </ul>
+                </li>
+                <li><strong>Phân tích và tối ưu hóa</strong>:
+                    <ul>
+                        <li>Theo dõi hiệu suất Trang web và hành vi người dùng để cải thiện trải nghiệm.</li>
+                        <li>Phân tích xu hướng sử dụng thông qua các công cụ như Google Analytics.</li>
+                    </ul>
+                </li>
+                <li><strong>Tuân thủ pháp luật</strong>:
+                    <ul>
+                        <li>Đáp ứng các yêu cầu từ cơ quan chức năng theo quy định pháp luật Việt Nam.</li>
+                    </ul>
+                </li>
+                <li><strong>Quảng cáo và tiếp thị</strong>:
+                    <ul>
+                        <li>Hiển thị quảng cáo phù hợp (nếu có) dựa trên sở thích của bạn.</li>
+                        <li>Gửi thông tin về các bài viết mới hoặc sự kiện (với sự đồng ý của bạn).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>3. Chia sẻ thông tin</h2>
+            <p>Chúng tôi không bán, trao đổi, hoặc chuyển giao thông tin cá nhân của bạn cho bên thứ ba, trừ các trường hợp sau:</p>
+            <ul>
+                <li><strong>Nhà cung cấp dịch vụ</strong>: Chúng tôi có thể chia sẻ thông tin với các đối tác cung cấp dịch vụ hỗ trợ Trang web (ví dụ: dịch vụ lưu trữ, phân tích dữ liệu, gửi email). Các đối tác này phải tuân thủ các nghĩa vụ bảo mật và chỉ sử dụng thông tin cho mục đích được ủy quyền.</li>
+                <li><strong>Yêu cầu pháp lý</strong>: Chúng tôi có thể tiết lộ thông tin nếu được yêu cầu bởi cơ quan chức năng hoặc để tuân thủ quy định pháp luật, bảo vệ quyền lợi, tài sản, hoặc an toàn của Trang web và người dùng.</li>
+                <li><strong>Sự đồng ý của bạn</strong>: Chúng tôi sẽ chỉ chia sẻ thông tin với bên thứ ba nếu bạn đã đồng ý trước.</li>
+            </ul>
+
+            <h2>4. Lưu trữ và bảo vệ thông tin</h2>
+            <ul>
+                <li><strong>Lưu trữ</strong>:
+                    <ul>
+                        <li>Thông tin cá nhân được lưu trữ trên các máy chủ an toàn, tuân thủ các tiêu chuẩn bảo mật theo quy định pháp luật Việt Nam.</li>
+                        <li>Thời gian lưu trữ phụ thuộc vào mục đích sử dụng, nhưng không vượt quá thời hạn quy định trong Nghị định 13/2023/NĐ-CP, trừ khi bạn yêu cầu xóa hoặc pháp luật có quy định khác.</li>
+                    </ul>
+                </li>
+                <li><strong>Bảo vệ</strong>:
+                    <ul>
+                        <li>Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức (như mã hóa, tường lửa, kiểm soát truy cập) để bảo vệ thông tin khỏi truy cập trái phép, mất mát, hoặc lạm dụng.</li>
+                        <li>Tuy nhiên, không có hệ thống nào an toàn tuyệt đối. Nếu xảy ra sự cố bảo mật, chúng tôi sẽ thông báo cho bạn và cơ quan chức năng theo quy định pháp luật.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>5. Quyền của bạn đối với dữ liệu cá nhân</h2>
+            <p>Theo Nghị định 13/2023/NĐ-CP, bạn có các quyền sau đối với dữ liệu cá nhân của mình:</p>
+            <ul>
+                <li><strong>Quyền truy cập</strong>: Yêu cầu xem thông tin cá nhân mà chúng tôi đang lưu trữ về bạn.</li>
+                <li><strong>Quyền chỉnh sửa</strong>: Yêu cầu sửa đổi thông tin cá nhân nếu không chính xác.</li>
+                <li><strong>Quyền xóa</strong>: Yêu cầu xóa thông tin cá nhân, trừ khi pháp luật yêu cầu lưu giữ.</li>
+                <li><strong>Quyền hạn chế xử lý</strong>: Yêu cầu hạn chế việc sử dụng thông tin cá nhân trong một số trường hợp.</li>
+                <li><strong>Quyền phản đối</strong>: Phản đối việc sử dụng thông tin cá nhân cho mục đích tiếp thị hoặc các mục đích khác không cần thiết.</li>
+                <li><strong>Quyền rút lại đồng ý</strong>: Rút lại sự đồng ý đã cung cấp trước đó (ví dụ: hủy đăng ký bản tin).</li>
+                <li><strong>Quyền khiếu nại</strong>: Khiếu nại với cơ quan quản lý (Cục An toàn thông tin, Bộ Thông tin và Truyền thông) nếu quyền của bạn bị xâm phạm.</li>
+            </ul>
+            <p>Để thực hiện các quyền này, vui lòng liên hệ với chúng tôi qua email: <a href="mailto:nguyenminhdat6401@gmail.com">nguyenminhdat6401@gmail.com</a>. Chúng tôi sẽ phản hồi trong vòng 30 ngày theo quy định pháp luật.</p>
+
+            <h2>6. Cookie và công nghệ theo dõi</h2>
+            <ul>
+                <li><strong>Cookie</strong>:
+                    <ul>
+                        <li>Trang web sử dụng cookie để nâng cao trải nghiệm người dùng, lưu trữ tùy chọn của bạn (như ngôn ngữ), và phân tích dữ liệu truy cập.</li>
+                        <li>Bạn có thể tắt cookie trong cài đặt trình duyệt, nhưng điều này có thể ảnh hưởng đến một số tính năng của Trang web.</li>
+                    </ul>
+                </li>
+                <li><strong>Công cụ bên thứ ba</strong>:
+                    <ul>
+                        <li>Chúng tôi sử dụng các dịch vụ như Google Analytics để thu thập dữ liệu ẩn danh về hành vi người dùng. Các dịch vụ này có thể đặt cookie hoặc sử dụng công nghệ theo dõi khác.</li>
+                        <li>Bạn có thể từ chối theo dõi bằng cách sử dụng các công cụ như Google Analytics Opt-out Browser Add-on.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>7. Liên kết đến trang web bên thứ ba</h2>
+            <p>Trang web có thể chứa liên kết đến các trang web khác (ví dụ: mạng xã hội, quảng cáo). Chúng tôi không chịu trách nhiệm về chính sách bảo mật hoặc nội dung của các trang web này. Vui lòng đọc kỹ chính sách bảo mật của họ trước khi cung cấp thông tin.</p>
+
+            <h2>8. Bảo mật thông tin trẻ em</h2>
+            <p>Trang web không hướng đến đối tượng dưới 16 tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em dưới 16 tuổi. Nếu bạn là phụ huynh và phát hiện con bạn đã cung cấp thông tin cá nhân, vui lòng liên hệ với chúng tôi để xóa thông tin đó.</p>
+
+            <h2>9. Cập nhật Chính sách Bảo mật</h2>
+            <p>Chúng tôi có thể cập nhật Chính sách Bảo mật này để phản ánh các thay đổi trong quy định pháp luật hoặc hoạt động của Trang web. Mọi thay đổi sẽ được đăng tải trên Trang web với ngày cập nhật mới nhất. Chúng tôi khuyến khích bạn kiểm tra định kỳ để nắm rõ các cập nhật.</p>
+
+            <h2>10. Liên hệ với chúng tôi</h2>
+            <p>Nếu bạn có câu hỏi, khiếu nại, hoặc yêu cầu liên quan đến Chính sách Bảo mật, vui lòng liên hệ:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:nguyenminhdat6401@gmail.com">nguyenminhdat6401@gmail.com</a></li>
+                <li><strong>Địa chỉ</strong>: [Update later]</li>
+                <li><strong>Đường dây nóng</strong>: [+84 333 692 848]</li>
+            </ul>
+            <p>Chúng tôi cam kết xử lý mọi yêu cầu của bạn một cách minh bạch và tuân thủ quy định pháp luật.</p>
+
+            <p class="italic">Lưu ý: Chính sách Bảo mật này được soạn thảo bằng tiếng Việt để phù hợp với người dùng tại Việt Nam. Nếu bạn cần bản dịch tiếng Anh hoặc ngôn ngữ khác, vui lòng liên hệ với chúng tôi.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                    <p class="text-gray-400 mt-2">Sharing thoughts and experiences through writing.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="index.html#blog" class="text-gray-400 hover:text-white transition">Blog</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 NguyenMinhDat Blog. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition mr-4">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Change active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

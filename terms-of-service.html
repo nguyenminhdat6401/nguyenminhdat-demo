@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều khoản Dịch vụ - NguyenMinhDat</title>
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Content specific styles */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: #1f2937;
+        }
+        
+        .content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+        
+        .content ul, .content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+        
+        .content a {
+            color: #3b82f6;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .content a:hover {
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#about" class="nav-link text-gray-900 hover:text-indigo-600 transition">About</a>
+                    <a href="index.html#blog" class="nav-link text-gray-900 hover:text-indigo-600 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-gray-900 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
+                <a href="index.html#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="content bg-white rounded-xl shadow-sm p-8 md:p-12">
+            <h1>Điều khoản Dịch vụ</h1>
+            <p class="text-gray-600 italic">Cập nhật lần cuối: 25/04/2025</p>
+
+            <p>Chào mừng bạn đến với trang web <strong>NguyenMinhDat</strong> (sau đây gọi là "Trang web"). Điều khoản Dịch vụ này (sau đây gọi là "Điều khoản") quy định các quy tắc và điều kiện khi bạn truy cập hoặc sử dụng Trang web. Bằng việc sử dụng Trang web, bạn đồng ý tuân thủ các Điều khoản này. Nếu bạn không đồng ý, vui lòng không tiếp tục sử dụng Trang web.</p>
+
+            <p>Chúng tôi cam kết vận hành Trang web theo các quy định pháp luật Việt Nam, bao gồm <strong>Luật An ninh mạng 2018</strong>, <strong>Luật Bảo vệ quyền lợi người tiêu dùng 2010</strong>, và các quy định liên quan khác.</p>
+
+            <h2>1. Chấp nhận Điều khoản</h2>
+            <p>Khi truy cập hoặc sử dụng Trang web, bạn xác nhận rằng bạn đã đọc, hiểu, và đồng ý bị ràng buộc bởi các Điều khoản này, cũng như <a href="privacy-policy.html">Chính sách Bảo mật</a> của chúng tôi. Chúng tôi có quyền cập nhật hoặc sửa đổi Điều khoản này bất kỳ lúc nào, và các thay đổi sẽ có hiệu lực ngay khi được đăng tải trên Trang web.</p>
+
+            <h2>2. Quyền và trách nhiệm của người dùng</h2>
+            <p>Khi sử dụng Trang web, bạn đồng ý:</p>
+            <ul>
+                <li>Không sử dụng Trang web cho các mục đích bất hợp pháp, lừa đảo, hoặc gây hại đến người khác.</li>
+                <li>Không đăng tải, chia sẻ, hoặc truyền tải nội dung vi phạm pháp luật Việt Nam, bao gồm nội dung xúc phạm, phỉ báng, khiêu dâm, hoặc vi phạm quyền riêng tư của người khác.</li>
+                <li>Không can thiệp hoặc làm gián đoạn hoạt động của Trang web, bao gồm việc tấn công mạng, phát tán mã độc, hoặc cố ý làm quá tải hệ thống.</li>
+                <li>Cung cấp thông tin chính xác và trung thực khi sử dụng các tính năng như bình luận, biểu mẫu liên hệ, hoặc đăng ký nhận bản tin.</li>
+                <li>Tuân thủ các quy định về bản quyền và sở hữu trí tuệ khi sử dụng nội dung trên Trang web.</li>
+            </ul>
+
+            <h2>3. Nội dung trên Trang web</h2>
+            <p>Trang web cung cấp các bài viết, hình ảnh, và nội dung khác liên quan đến công nghệ, du lịch, và cuộc sống. Nội dung này được cung cấp với mục đích thông tin và không được xem là tư vấn chuyên môn (ví dụ: pháp lý, y tế, hoặc tài chính).</p>
+            <ul>
+                <li><strong>Sử dụng nội dung</strong>: Bạn có thể xem, chia sẻ, và sử dụng nội dung trên Trang web cho mục đích cá nhân, phi thương mại, miễn là ghi rõ nguồn gốc từ Trang web.</li>
+                <li><strong>Giới hạn trách nhiệm</strong>: Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng hoặc dựa vào nội dung trên Trang web.</li>
+            </ul>
+
+            <h2>4. Sở hữu trí tuệ</h2>
+            <p>Tất cả nội dung trên Trang web, bao gồm văn bản, hình ảnh, logo, và thiết kế, đều được sử dụng thoải mái, ảnh được lấy phần lớn từ trên <a href="https://unsplash.com/">https://unsplash.com/</a></p>
+            <p>Nếu bạn gửi nội dung (ví dụ: bình luận, phản hồi) lên Trang web, bạn cấp cho chúng tôi quyền sử dụng, chỉnh sửa, và hiển thị nội dung đó mà không cần trả phí.</p>
+
+            <h2>5. Bình luận và nội dung do người dùng cung cấp</h2>
+            <p>Trang web cho phép người dùng để lại bình luận hoặc gửi nội dung qua biểu mẫu liên hệ. Bạn chịu trách nhiệm hoàn toàn về nội dung bạn cung cấp và đồng ý rằng:</p>
+            <ul>
+                <li>Nội dung không được vi phạm pháp luật, quyền riêng tư, hoặc quyền sở hữu trí tuệ của bất kỳ ai.</li>
+                <li>Chúng tôi có quyền xem xét, chỉnh sửa, hoặc xóa bất kỳ nội dung nào mà chúng tôi cho là không phù hợp.</li>
+                <li>Chúng tôi không chịu trách nhiệm về nội dung do người dùng đăng tải.</li>
+            </ul>
+
+            <h2>6. Chấm dứt quyền truy cập</h2>
+            <p>Chúng tôi có quyền chấm dứt hoặc hạn chế quyền truy cập của bạn vào Trang web nếu bạn vi phạm Điều khoản này hoặc thực hiện hành vi gây hại đến Trang web hoặc người dùng khác. Việc chấm dứt có thể diễn ra mà không cần thông báo trước.</p>
+
+            <h2>7. Giới hạn trách nhiệm</h2>
+            <p>Trang web được cung cấp trên cơ sở "nguyên trạng" và "tùy thuộc vào tình trạng sẵn có". Chúng tôi không bảo đảm rằng:</p>
+            <ul>
+                <li>Trang web sẽ hoạt động liên tục, không bị gián đoạn, hoặc không có lỗi.</li>
+                <li>Nội dung trên Trang web sẽ đáp ứng nhu cầu hoặc kỳ vọng của bạn.</li>
+            </ul>
+            <p>Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại trực tiếp, gián tiếp, hoặc ngẫu nhiên nào phát sinh từ việc sử dụng Trang web, trừ khi pháp luật Việt Nam có quy định khác.</p>
+
+            <h2>8. Liên kết đến trang web bên thứ ba</h2>
+            <p>Trang web có thể chứa liên kết đến các trang web bên thứ ba (ví dụ: mạng xã hội, quảng cáo). Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, chính sách, hoặc hoạt động của các trang web này. Bạn truy cập các liên kết này với rủi ro của riêng mình.</p>
+
+            <h2>9. Luật áp dụng và giải quyết tranh chấp</h2>
+            <p>Các Điều khoản này được điều chỉnh bởi pháp luật Việt Nam. Mọi tranh chấp phát sinh từ việc sử dụng Trang web sẽ được giải quyết tại tòa án có thẩm quyền tại Hà Nội, Việt Nam.</p>
+
+            <h2>10. Cập nhật Điều khoản Dịch vụ</h2>
+            <p>Chúng tôi có thể cập nhật Điều khoản này để phản ánh các thay đổi trong hoạt động của Trang web hoặc quy định pháp luật. Các phiên bản cập nhật sẽ được đăng tải trên Trang web với ngày cập nhật mới nhất. Bạn nên kiểm tra định kỳ để nắm rõ các thay đổi.</p>
+
+            <h2>11. Liên hệ với chúng tôi</h2>
+            <p>Nếu bạn có câu hỏi, khiếu nại, hoặc yêu cầu liên quan đến Điều khoản Dịch vụ, vui lòng liên hệ:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:nguyenminhdat6401@gmail.com">nguyenminhdat6401@gmail.com</a></li>
+                <li><strong>Địa chỉ</strong>: Số 3, Ngõ 136, Đường Tân Lập, Hà Nội, Việt Nam</li>
+                <li><strong>Điện thoại</strong>: +84 333 692 848</li>
+            </ul>
+            <p>Chúng tôi sẽ phản hồi trong thời gian sớm nhất, tối đa 30 ngày theo quy định pháp luật.</p>
+
+            <p class="italic">Lưu ý: Điều khoản Dịch vụ này được soạn thảo bằng tiếng Việt để phù hợp với người dùng tại Việt Nam. Nếu bạn cần bản dịch tiếng Anh hoặc ngôn ngữ khác, vui lòng liên hệ với chúng tôi.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-xl font-bold gradient-text">NguyenMinhDat</a>
+                    <p class="text-gray-400 mt-2">Sharing thoughts and experiences through writing.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="index.html#blog" class="text-gray-400 hover:text-white transition">Blog</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 NguyenMinhDat Blog. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition mr-4">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Change active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
